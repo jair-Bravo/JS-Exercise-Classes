@@ -83,18 +83,18 @@ function Person (name, age) {
       this.tank = 0;
       this.odometer = 0;
     }
-  fills(gallons){
+  fill(gallons){
     this.tank = this.tank + gallons;
   } 
-  dirive(distance){
+  drive(dist){
     const drivableMiles = this.tank * this.milesPerGallon;
     if(dist <= drivableMiles){
       this.odometer = this.odometer + dist;
-      this.tank = this.tank - dist / (this.milesPerGallon);
+      this.tank = this.tank - (dist / this.milesPerGallon);
     }else{
       this.odometer = this.odometer + drivableMiles;
       this.tank = 0;
-      return `I ran out of fule at ${this.odometer} miles!`;
+      return `I ran out of fuel at ${this.odometer} miles!`;
     }
   }
 }
